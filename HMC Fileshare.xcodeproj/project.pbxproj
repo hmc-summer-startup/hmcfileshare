@@ -26,8 +26,8 @@
 		06E48A7C1B3D16FD0006C882 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06E48A7B1B3D16FD0006C882 /* OpenGLES.framework */; };
 		06E48A7E1B3D17080006C882 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06E48A7D1B3D17080006C882 /* QuartzCore.framework */; };
 		06E48A801B3D17110006C882 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06E48A7F1B3D17110006C882 /* SystemConfiguration.framework */; };
-		06E48A821B3D173A0006C882 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06E48A811B3D173A0006C882 /* GoogleMaps.framework */; };
-		06E48A841B3D17410006C882 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 06E48A831B3D17410006C882 /* GoogleMaps.bundle */; };
+		118F45D81B3E00EB00A60D99 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 118F45D71B3E00EB00A60D99 /* GoogleMaps.framework */; };
+		118F45DA1B3E00F700A60D99 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 118F45D91B3E00F700A60D99 /* GoogleMaps.bundle */; };
 		450F685DA16A7F429924F13D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B0584F9B640F3E0D84E8EF6 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -65,10 +65,10 @@
 		06E48A7B1B3D16FD0006C882 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		06E48A7D1B3D17080006C882 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		06E48A7F1B3D17110006C882 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		06E48A811B3D173A0006C882 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Pods/GoogleMaps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
-		06E48A831B3D17410006C882 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Pods/GoogleMaps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		06E48A851B3D17A90006C882 /* HMC Fileshare-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HMC Fileshare-Bridging-Header.h"; sourceTree = "<group>"; };
 		0B0584F9B640F3E0D84E8EF6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		118F45D71B3E00EB00A60D99 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Pods/GoogleMaps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
+		118F45D91B3E00F700A60D99 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Pods/GoogleMaps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		86E0B7D25C073BE3BBFD2751 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D3E5FFDF6408232E71C0C6C2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,7 +86,7 @@
 				06E48A761B3D16DD0006C882 /* libc++.dylib in Frameworks */,
 				06E48A741B3D16D40006C882 /* ImageIO.framework in Frameworks */,
 				06E48A721B3D16CD0006C882 /* GLKit.framework in Frameworks */,
-				06E48A821B3D173A0006C882 /* GoogleMaps.framework in Frameworks */,
+				118F45D81B3E00EB00A60D99 /* GoogleMaps.framework in Frameworks */,
 				06E48A701B3D16C60006C882 /* CoreText.framework in Frameworks */,
 				06E48A6E1B3D16BF0006C882 /* CoreLocation.framework in Frameworks */,
 				06E48A6C1B3D16B60006C882 /* CoreData.framework in Frameworks */,
@@ -168,8 +168,8 @@
 		2F9C9112D554279825E83E66 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				06E48A831B3D17410006C882 /* GoogleMaps.bundle */,
-				06E48A811B3D173A0006C882 /* GoogleMaps.framework */,
+				118F45D91B3E00F700A60D99 /* GoogleMaps.bundle */,
+				118F45D71B3E00EB00A60D99 /* GoogleMaps.framework */,
 				06E48A7F1B3D17110006C882 /* SystemConfiguration.framework */,
 				06E48A7D1B3D17080006C882 /* QuartzCore.framework */,
 				06E48A7B1B3D16FD0006C882 /* OpenGLES.framework */,
@@ -282,7 +282,7 @@
 				067662151B3CD8C4002954EB /* Main.storyboard in Resources */,
 				0676621A1B3CD8C4002954EB /* LaunchScreen.xib in Resources */,
 				067662171B3CD8C4002954EB /* Images.xcassets in Resources */,
-				06E48A841B3D17410006C882 /* GoogleMaps.bundle in Resources */,
+				118F45DA1B3E00F700A60D99 /* GoogleMaps.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
