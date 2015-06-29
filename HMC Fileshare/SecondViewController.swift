@@ -9,10 +9,18 @@
 import UIKit
 
 class SecondViewController: UIViewController {
-
+    
+    var userLat: Double!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        println()
+        println("Second View Controller Test:")
+        println("Latitude: \(userLat)")
+        println()
+        
     }
 
     override func didReceiveMemoryWarning() {

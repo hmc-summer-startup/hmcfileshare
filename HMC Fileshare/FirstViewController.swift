@@ -8,16 +8,16 @@
 
 import UIKit
 
+
+
 class FirstViewController: UIViewController, CLLocationManagerDelegate {
     
     var locationManager = CLLocationManager()
     
     var didFindMyLocation = false
     
-    var userLong: Double = 0.0
-    var userLat: Double = 0.0
-    
-    
+    var userLong: Double! = 0.0
+    var userLat: Double! = 0.0
     
     @IBAction func changeMapType(sender: AnyObject) {
         let actionSheet = UIAlertController(title: "Map Types", message: "Select map type:", preferredStyle: UIAlertControllerStyle.ActionSheet)
@@ -57,16 +57,17 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        println(" ")
-//        println("Initial Location ")
-//        println("Longitude: \(userLong)")
-//        println("Latitude: \(userLat)")
-//        println(" ")
+        println(" ")
+        println("Initial Location ")
+        println("Longitude: \(userLong)")
+        println("Latitude: \(userLat)")
+        println(" ")
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         
         viewMap.addObserver(self, forKeyPath: "myLocation", options: NSKeyValueObservingOptions.New, context: nil)
+        
         
 //        let camera: GMSCameraPosition = GMSCameraPosition.cameraWithLatitude(34.106088672398336, longitude: -117.71047934889793, zoom: 18)
 //        viewMap.camera = camera
@@ -85,6 +86,12 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
 //        marker.map = mapView
         
     }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
     
     override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
         if !didFindMyLocation {

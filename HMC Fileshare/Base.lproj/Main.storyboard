@@ -61,11 +61,12 @@
                     <connections>
                         <outlet property="toolbar" destination="Xhb-F0-MKg" id="8L1-lf-u91"/>
                         <outlet property="viewMap" destination="Rqo-wM-dWv" id="J6u-Jn-sqf"/>
+                        <segue destination="8rJ-Kc-sve" kind="show" identifier="userLocation" id="nBx-za-2T0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-303"/>
+            <point key="canvasLocation" x="750" y="-344"/>
         </scene>
         <!--Upload-->
         <scene sceneID="wg7-f3-ORb">
@@ -148,4 +149,7 @@
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="nBx-za-2T0"/>
+    </inferredMetricsTieBreakers>
 </document>
