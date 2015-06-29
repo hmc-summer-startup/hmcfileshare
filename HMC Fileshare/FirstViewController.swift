@@ -44,7 +44,7 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let camera: GMSCameraPosition = GMSCameraPosition.cameraWithLatitude(34.106, longitude: -117.2, zoom: 8.0)
+        let camera: GMSCameraPosition = GMSCameraPosition.cameraWithLatitude(34.106, longitude: -117.2, zoom: 18)
         viewMap.camera = camera
         
 //        var camera = GMSCameraPosition.cameraWithLatitude(34.10566,
