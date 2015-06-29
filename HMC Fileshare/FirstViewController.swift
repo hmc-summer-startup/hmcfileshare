@@ -8,7 +8,16 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, CLLocationManagerDelegate {
+    
+    var locationManager = CLLocationManager()
+    
+    var didFindMyLocation = false
+    
+    var userLong: Double = 0.0
+    var userLat: Double = 0.0
+    
+    
     
     @IBAction func changeMapType(sender: AnyObject) {
         let actionSheet = UIAlertController(title: "Map Types", message: "Select map type:", preferredStyle: UIAlertControllerStyle.ActionSheet)
@@ -41,11 +50,26 @@ class FirstViewController: UIViewController {
     
     @IBOutlet weak var toolbar: UIToolbar!
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let camera: GMSCameraPosition = GMSCameraPosition.cameraWithLatitude(34.106, longitude: -117.2, zoom: 18)
-        viewMap.camera = camera
+//        println(" ")
+//        println("Initial Location ")
+//        println("Longitude: \(userLong)")
+//        println("Latitude: \(userLat)")
+//        println(" ")
+        
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        
+        viewMap.addObserver(self, forKeyPath: "myLocation", options: NSKeyValueObservingOptions.New, context: nil)
+        
+//        let camera: GMSCameraPosition = GMSCameraPosition.cameraWithLatitude(34.106088672398336, longitude: -117.71047934889793, zoom: 18)
+//        viewMap.camera = camera
         
 //        var camera = GMSCameraPosition.cameraWithLatitude(34.10566,
 //            longitude: -117.70698, zoom: 18)
@@ -60,6 +84,31 @@ class FirstViewController: UIViewController {
 ////        marker.snippet = ""
 //        marker.map = mapView
         
+    }
+    
+    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
+        if !didFindMyLocation {
+            let myLocation: CLLocation = change[NSKeyValueChangeNewKey] as! CLLocation
+            viewMap.camera = GMSCameraPosition.cameraWithTarget(myLocation.coordinate, zoom: 10.0)
+            viewMap.settings.myLocationButton = true
+            
+            didFindMyLocation = true
+            
+            userLong = myLocation.coordinate.longitude
+            userLat = myLocation.coordinate.latitude
+            
+            println()
+            println("Current User Location")
+            println("Longitude: \(myLocation.coordinate.longitude)")
+            println("Latitude: \(myLocation.coordinate.latitude)")
+            println()
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        if status == CLAuthorizationStatus.AuthorizedWhenInUse {
+            viewMap.myLocationEnabled = true
+        }
     }
 }
 
