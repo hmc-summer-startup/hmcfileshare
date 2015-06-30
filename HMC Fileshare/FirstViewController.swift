@@ -17,7 +17,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     var didFindMyLocation = false
     
     var userLong: Double! = 0.0
-    var userLat: Double! = 0.0
+    var userLat:  Double! = 0.0
     
     @IBAction func changeMapType(sender: AnyObject) {
         let actionSheet = UIAlertController(title: "Map Types", message: "Select map type:", preferredStyle: UIAlertControllerStyle.ActionSheet)
@@ -57,6 +57,8 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewMap.settings.myLocationButton = true
+        
         println(" ")
         println("Initial Location ")
         println("Longitude: \(userLong)")
@@ -68,6 +70,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         
         viewMap.addObserver(self, forKeyPath: "myLocation", options: NSKeyValueObservingOptions.New, context: nil)
         
+//        dispatch_once(token)
         
 //        let camera: GMSCameraPosition = GMSCameraPosition.cameraWithLatitude(34.106088672398336, longitude: -117.71047934889793, zoom: 18)
 //        viewMap.camera = camera
@@ -84,8 +87,22 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
 //        // Snippet adds extra text to the map pointer icon.
 ////        marker.snippet = ""
 //        marker.map = mapView
+    }
+    
+    class var sharedInstance: FirstViewController{
+        struct Static{
+            static var instance: FirstViewController?
+            static var token: dispatch_once_t = 0
+        }
+        
+        dispatch_once(&Static.token){
+            Static.instance = FirstViewController()
+        }
+        
+        return Static.instance!
         
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -97,7 +114,9 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         if !didFindMyLocation {
             let myLocation: CLLocation = change[NSKeyValueChangeNewKey] as! CLLocation
             viewMap.camera = GMSCameraPosition.cameraWithTarget(myLocation.coordinate, zoom: 10.0)
-            viewMap.settings.myLocationButton = true
+            
+            // Moved to the viewDidLoad method so that it appears right away.
+//            viewMap.settings.myLocationButton = true
             
             didFindMyLocation = true
             

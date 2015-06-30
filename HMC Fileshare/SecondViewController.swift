@@ -10,7 +10,7 @@ import UIKit
 
 class SecondViewController: UIViewController {
     
-    var userLat: Double!
+    let fvc = FirstViewController.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +18,8 @@ class SecondViewController: UIViewController {
         
         println()
         println("Second View Controller Test:")
-        println("Latitude: \(userLat)")
+        println("Latitude: \(self.fvc.userLat)")
+        // println("Latitude: \(userLat)")
         println()
         
     }

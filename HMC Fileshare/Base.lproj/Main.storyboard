@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -18,13 +18,19 @@
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN" customClass="GLKView">
+                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xhb-F0-MKg">
-                                <rect key="frame" x="0.0" y="17" width="600" height="44"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xhb-F0-MKg">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <color key="backgroundColor" red="0.26487531565656564" green="0.26487531565656564" blue="0.26487531565656564" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="44" id="GfW-id-XAS"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="KMe-3H-s2e"/>
+                                    <constraint firstAttribute="height" constant="44" id="N9u-DF-fhU"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="p46-5F-5Tw"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem title="Terrain" id="IMk-vn-OpP">
                                         <color key="tintColor" red="0.96506076388888884" green="0.96506076388888884" blue="0.96506076388888884" alpha="1" colorSpace="calibratedRGB"/>
@@ -41,20 +47,37 @@
                                 </items>
                                 <color key="barTintColor" red="0.28829308710000001" green="0.28829308710000001" blue="0.28829308710000001" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rqo-wM-dWv" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="61" width="600" height="490"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rqo-wM-dWv" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="52" width="600" height="214"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zim-GN-bTC">
+                                <rect key="frame" x="0.0" y="295" width="618" height="256"/>
+                            </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Files" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nlK-iR-eaJ">
+                                <rect key="frame" x="282" y="274" width="36" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Rqo-wM-dWv" firstAttribute="bottom" secondItem="4ug-Mw-9AY" secondAttribute="top" id="Edp-SD-z8K"/>
+                            <constraint firstItem="nlK-iR-eaJ" firstAttribute="centerX" secondItem="Rqo-wM-dWv" secondAttribute="centerX" id="4n3-YQ-W0Q"/>
+                            <constraint firstItem="Rqo-wM-dWv" firstAttribute="bottom" secondItem="4ug-Mw-9AY" secondAttribute="top" constant="-293" id="Edp-SD-z8K"/>
                             <constraint firstItem="Rqo-wM-dWv" firstAttribute="leading" secondItem="Xhb-F0-MKg" secondAttribute="leading" id="F9Q-xK-uQK"/>
-                            <constraint firstItem="Xhb-F0-MKg" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="topMargin" constant="17" id="GCL-8l-j36"/>
+                            <constraint firstItem="Xhb-F0-MKg" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="topMargin" constant="8" id="GCL-8l-j36"/>
                             <constraint firstItem="Rqo-wM-dWv" firstAttribute="top" secondItem="Xhb-F0-MKg" secondAttribute="bottom" id="Yqt-8p-hER"/>
+                            <constraint firstItem="nlK-iR-eaJ" firstAttribute="top" secondItem="Rqo-wM-dWv" secondAttribute="bottom" constant="8" symbolic="YES" id="cqc-2S-IgJ"/>
+                            <constraint firstItem="zim-GN-bTC" firstAttribute="leading" secondItem="Rqo-wM-dWv" secondAttribute="leading" id="eLX-Ts-dOg"/>
                             <constraint firstItem="Rqo-wM-dWv" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="k2d-GW-3MS"/>
                             <constraint firstAttribute="trailing" secondItem="Xhb-F0-MKg" secondAttribute="trailing" id="nEQ-Gq-sy3"/>
+                            <constraint firstItem="nlK-iR-eaJ" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" constant="274" id="p03-Bs-bhU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zim-GN-bTC" secondAttribute="trailing" constant="-34" id="rhY-Aa-AZD"/>
+                            <constraint firstItem="zim-GN-bTC" firstAttribute="bottom" secondItem="4ug-Mw-9AY" secondAttribute="top" id="u3M-KF-en5"/>
                             <constraint firstItem="Rqo-wM-dWv" firstAttribute="trailing" secondItem="Xhb-F0-MKg" secondAttribute="trailing" id="ygN-rD-laR"/>
+                            <constraint firstItem="zim-GN-bTC" firstAttribute="top" secondItem="nlK-iR-eaJ" secondAttribute="bottom" id="zHw-9F-yAB"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="first" id="acW-dT-cKf"/>
@@ -66,7 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-344"/>
+            <point key="canvasLocation" x="750" y="-350"/>
         </scene>
         <!--Upload-->
         <scene sceneID="wg7-f3-ORb">
@@ -150,6 +173,6 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nBx-za-2T0"/>
+        <segue reference="lzU-1b-eKA"/>
     </inferredMetricsTieBreakers>
 </document>
