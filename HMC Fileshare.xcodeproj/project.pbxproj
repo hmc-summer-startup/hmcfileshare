@@ -26,6 +26,7 @@
 		06E48A7C1B3D16FD0006C882 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06E48A7B1B3D16FD0006C882 /* OpenGLES.framework */; };
 		06E48A7E1B3D17080006C882 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06E48A7D1B3D17080006C882 /* QuartzCore.framework */; };
 		06E48A801B3D17110006C882 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06E48A7F1B3D17110006C882 /* SystemConfiguration.framework */; };
+		117CB1261B446134003CB30A /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117CB1251B446134003CB30A /* ThirdViewController.swift */; };
 		118F45D81B3E00EB00A60D99 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 118F45D71B3E00EB00A60D99 /* GoogleMaps.framework */; };
 		118F45DA1B3E00F700A60D99 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 118F45D91B3E00F700A60D99 /* GoogleMaps.bundle */; };
 		450F685DA16A7F429924F13D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B0584F9B640F3E0D84E8EF6 /* libPods.a */; };
@@ -67,6 +68,7 @@
 		06E48A7F1B3D17110006C882 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		06E48A851B3D17A90006C882 /* HMC Fileshare-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HMC Fileshare-Bridging-Header.h"; sourceTree = "<group>"; };
 		0B0584F9B640F3E0D84E8EF6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		117CB1251B446134003CB30A /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		118F45D71B3E00EB00A60D99 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Pods/GoogleMaps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
 		118F45D91B3E00F700A60D99 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Pods/GoogleMaps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		86E0B7D25C073BE3BBFD2751 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				0676620D1B3CD8C4002954EB /* AppDelegate.swift */,
 				0676620F1B3CD8C4002954EB /* FirstViewController.swift */,
 				067662111B3CD8C4002954EB /* SecondViewController.swift */,
+				117CB1251B446134003CB30A /* ThirdViewController.swift */,
 				067662131B3CD8C4002954EB /* Main.storyboard */,
 				067662161B3CD8C4002954EB /* Images.xcassets */,
 				067662181B3CD8C4002954EB /* LaunchScreen.xib */,
@@ -335,6 +338,7 @@
 			files = (
 				067662121B3CD8C4002954EB /* SecondViewController.swift in Sources */,
 				0676620E1B3CD8C4002954EB /* AppDelegate.swift in Sources */,
+				117CB1261B446134003CB30A /* ThirdViewController.swift in Sources */,
 				067662101B3CD8C4002954EB /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,9 +8,11 @@
 
 import UIKit
 
+let kBaseURL:String = "http://localhost:3000/"
+let kLocations = "locations"
+let kFiles = "files"
 
-
-class FirstViewController: UIViewController, CLLocationManagerDelegate {
+class FirstViewController: UIViewController, CLLocationManagerDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var locationManager = CLLocationManager()
     
@@ -18,6 +20,22 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     
     var userLong: Double! = 0.0
     var userLat:  Double! = 0.0
+   
+    @IBOutlet var imageView: UIImageView!
+    let imagePicker = UIImagePickerController()
+    
+    @IBAction func addFile(sender: UIBarButtonItem) {
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .PhotoLibrary
+        
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+//    @IBAction func addFile(sender: UIButton) {
+//        imagePicker.allowsEditing = false
+//        imagePicker.sourceType = .PhotoLibrary
+//        
+//        presentViewController(imagePicker, animated: true, completion: nil)
+//    }
     
     @IBAction func changeMapType(sender: AnyObject) {
         let actionSheet = UIAlertController(title: "Map Types", message: "Select map type:", preferredStyle: UIAlertControllerStyle.ActionSheet)
@@ -57,6 +75,8 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        imagePicker.delegate = self
+        
         viewMap.settings.myLocationButton = true
         
         println(" ")
@@ -87,6 +107,20 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
 //        // Snippet adds extra text to the map pointer icon.
 ////        marker.snippet = ""
 //        marker.map = mapView
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imageView.contentMode = .ScaleAspectFit
+//            imageView.contentMode = .ScaleAspectFill
+            imageView.image = pickedImage
+        }
+        
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     class var sharedInstance: FirstViewController{
